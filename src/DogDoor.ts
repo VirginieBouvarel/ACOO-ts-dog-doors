@@ -1,8 +1,18 @@
 export class DogDoor {
   private doorIsOpen: boolean;
+  private allowedBark: string | undefined;
 
   constructor() {
     this.doorIsOpen = false;
+    this.allowedBark = undefined;
+  }
+
+  getAllowedBark(): string | undefined {
+    return this.allowedBark;
+  }
+
+  setAllowedBark(bark: string): void {
+    this.allowedBark = bark;
   }
 
   open(): void {
