@@ -1,4 +1,4 @@
-# Cas d'utilisation
+# Cas d'utilisation : Trappe pour chien avec détecteur d'aboiement
 Les clients sont contents de leur trappe mais _en l'utilisant_ ils ont éprouvé un **nouveau besoin**.
 Maintenant ils veulent que la trappe s'ouvre automatiquement dès que leur chien aboie.
 Ils ne veulent plus être obligés d'appuyer sur le bouton de la télécommande.
