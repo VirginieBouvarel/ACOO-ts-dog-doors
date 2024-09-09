@@ -1,17 +1,18 @@
+import { Bark } from "./Bark";
+
 export class DogDoor {
   private doorIsOpen: boolean;
-  private allowedBark: string | undefined;
+  private allowedBark: Bark | undefined;
 
   constructor() {
     this.doorIsOpen = false;
-    this.allowedBark = undefined;
   }
 
-  getAllowedBark(): string | undefined {
+  getAllowedBark(): Bark | undefined {
     return this.allowedBark;
   }
 
-  setAllowedBark(bark: string): void {
+  setAllowedBark(bark: Bark): void {
     this.allowedBark = bark;
   }
 

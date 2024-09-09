@@ -1,11 +1,9 @@
-# Solution de Rodolphe
-Rodolphe choisit de comparer directement les chaînes de caractères représentant un aboiement.
-Dès le départ il enregistre le son de l'aboiement de Fido.
-Et il le compare à l'aboiement détecté pour décider de l'action à déclencher.
+# Solution de Sam
+Sam choisit de créer une classe Bark.
+Et le moment venu il lui délèguera la comparaison des deux aboiements.
 
 ## PROS
-Solution rapide
+Solution plus souple et plus robuste.
 
 ## CONS
-Le code est piloté directement par des chaînes de caractères, 
-ce qui est une mauvaise pratique et peut engendrer facilement des bogues.
+Légèrement moins rapide.

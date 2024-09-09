@@ -1,3 +1,4 @@
+import { Bark } from "../Bark";
 import { BarkRecognizer } from "../BarkRecognizer";
 import { DogDoor } from "../DogDoor";
 
@@ -6,10 +7,11 @@ export class DogDoorTester {
     const door = new DogDoor();
     const recognizer = new BarkRecognizer(door);
 
-    door.setAllowedBark('Wouaf');
-    
+    const fidoBark = new Bark('Wouaf');
+    door.setAllowedBark(fidoBark);
+
     console.log('Fido aboie pour sortir');
-    recognizer.recognize("Wouaf");
+    recognizer.recognize(fidoBark);
     console.log('Fido est sorti');
 
     try {
@@ -18,7 +20,7 @@ export class DogDoorTester {
         console.log(error);
     }
     console.log('Un autre petit chien aboie pour rentrer');
-    recognizer.recognize("Yip");
+    recognizer.recognize(new Bark("Yip"));
 
     try {
       await new Promise<void>(resolve => setTimeout(resolve, 10000));
@@ -28,7 +30,7 @@ export class DogDoorTester {
     console.log('Fido a terminé');
     console.log('Mais il est coincé dehors !');
     console.log('Fido aboie pour rentrer');
-    recognizer.recognize("Wouaf");
+    recognizer.recognize(fidoBark);
     console.log('Fido est rentré');
   }
 }
