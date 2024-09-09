@@ -10,12 +10,7 @@ export class DogDoorTester {
     remote.pressButton();
 
     console.log('Fido est sorti');
-    remote.pressButton();
-
     console.log('Fido a terminé');
-    remote.pressButton();
-
     console.log('Fido est rentré');
-    remote.pressButton();
   }
 }
