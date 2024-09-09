@@ -8,6 +8,11 @@ export class DogDoor {
   open(): void {
     console.log("La trappe s'ouvre");
     this.doorIsOpen = true;
+
+    const doorTimer = setTimeout(() => {
+      this.close();
+      clearTimeout(doorTimer);
+    }, 5000);
   }
 
   close(): void {
