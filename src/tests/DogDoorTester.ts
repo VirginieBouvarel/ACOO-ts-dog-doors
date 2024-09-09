@@ -2,7 +2,7 @@ import { DogDoor } from "../DogDoor";
 import { Remote } from "../Remote";
 
 export class DogDoorTester {
-  main(): void {
+  async main(): Promise<void> {
     const door = new DogDoor();
     const remote = new Remote(door);
     
@@ -10,12 +10,19 @@ export class DogDoorTester {
     remote.pressButton();
 
     console.log('Fido est sorti');
-    remote.pressButton();
-
     console.log('Fido a terminé');
+
+    try {
+      await new Promise<void>(resolve => setTimeout(resolve, 10000));
+    } catch (error) {
+        console.log(error);
+    }
+
+    console.log('Mais il est coincé dehors !');
+    console.log('Fido aboie pour rentrer');
+    console.log('Virginie entend Fido et prend la télécommande');
     remote.pressButton();
 
     console.log('Fido est rentré');
-    remote.pressButton();
   }
 }

@@ -14,5 +14,10 @@ export class Remote {
     } else {
       this.door.open();
     }
+
+    const timer = setTimeout(() => {
+      this.door.close();
+      clearTimeout(timer);
+  }, 5000);
   }
 }
