@@ -7,11 +7,13 @@ export class DogDoorTester {
     const door = new DogDoor();
     const recognizer = new BarkRecognizer(door);
 
-    const fidoBark = new Bark('Wouaf');
-    door.setAllowedBark(fidoBark);
+    door.addAllowedBark(new Bark('Wouaf'));
+    door.addAllowedBark(new Bark('Wouff'));
+    door.addAllowedBark(new Bark('Wouh'));
+    door.addAllowedBark(new Bark('Wouuuuuf'));
 
     console.log('Fido aboie pour sortir');
-    recognizer.recognize(fidoBark);
+    recognizer.recognize(new Bark('Wouh'));
     console.log('Fido est sorti');
 
     try {
@@ -30,7 +32,7 @@ export class DogDoorTester {
     console.log('Fido a terminé');
     console.log('Mais il est coincé dehors !');
     console.log('Fido aboie pour rentrer');
-    recognizer.recognize(fidoBark);
+    recognizer.recognize(new Bark('Wouaf'));
     console.log('Fido est rentré');
   }
 }

@@ -10,10 +10,15 @@ export class BarkRecognizer {
 
   recognize(bark: Bark) :void {
     console.log(`   Détecteur d'aboiement: J'ai entendu un ${bark.getSound()}`);
-    if(this.door.getAllowedBark()!.equals(bark)) {
-      this.door.open();
-    } else {
-      console.log("Ce chien n'est pas autorisé à entrer");
+    const allowedBarks = this.door.getAllowedBarks();
+
+    for (let i = 0; i < allowedBarks.length; i++) {
+      const allowedBark = allowedBarks[i];
+      if(allowedBark.equals(bark)) {
+        this.door.open();
+        return;
+      }
     }
+    console.log("Ce chien n'est pas autorisé à entrer");
   }
 }
