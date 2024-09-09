@@ -1,13 +1,13 @@
+import { BarkRecognizer } from "../BarkRecognizer";
 import { DogDoor } from "../DogDoor";
-import { Remote } from "../Remote";
 
 export class DogDoorTester {
   async main(): Promise<void> {
     const door = new DogDoor();
-    const remote = new Remote(door);
+    const recognizer = new BarkRecognizer(door);
     
     console.log('Fido aboie pour sortir');
-    remote.pressButton();
+    recognizer.recognize("Wouaf");
 
     console.log('Fido est sorti');
     console.log('Fido a terminé');
@@ -20,8 +20,7 @@ export class DogDoorTester {
 
     console.log('Mais il est coincé dehors !');
     console.log('Fido aboie pour rentrer');
-    console.log('Virginie entend Fido et prend la télécommande');
-    remote.pressButton();
+    recognizer.recognize("Wouaf");
 
     console.log('Fido est rentré');
   }
